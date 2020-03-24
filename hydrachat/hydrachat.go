@@ -13,12 +13,12 @@ var logger = hlogger.GetInstance()
 
 func Run(connection string) error {
 	l, err := net.Listen("tcp", connection)
-	r := CreateRoom("Hydrachat")
-
 	if err != nil {
 		logger.Println("Error connecting to chat client", err)
 		return err
 	}
+
+	r := CreateRoom("Hydrachat")
 
 	go func() {
 		ch := make(chan os.Signal)

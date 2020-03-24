@@ -12,7 +12,7 @@ type client struct {
 	wc chan string
 }
 
-func StartClient(MsgCh chan<- string, cn io.ReadWriteCloser, quit chan struct{}) (chan<- string, chan<- struct{}) {
+func StartClient(MsgCh chan<- string, cn io.ReadWriteCloser, quit chan struct{}) (chan<- string, chan struct{}) {
 	c := new(client)
 	c.Reader = bufio.NewReader(cn)
 	c.Writer = bufio.NewWriter(cn)
