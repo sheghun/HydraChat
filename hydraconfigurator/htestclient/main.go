@@ -18,7 +18,7 @@ func main() {
 	dir, err := os.Getwd()
 
 	configStruct := new(Config)
-	err = hydraconfigurator.GetCongiguration(hydraconfigurator.CUSTOM, configStruct, dir+"/hydraconfigurator/configFile.conf")
+	err = hydraconfigurator.GetConfiguration(hydraconfigurator.CUSTOM, configStruct, dir+"/hydraconfigurator/configFile.conf")
 	fmt.Println(*configStruct)
 
 	if configStruct.TB {
